@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 6% 4%;
+    --foreground: 220 16% 96%;
+    --card: 240 5% 7%;
+    --card-foreground: 220 16% 96%;
+    --popover: 240 5% 7%;
+    --popover-foreground: 220 16% 96%;
+    --primary: 215 36% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4% 13%;
+    --secondary-foreground: 220 16% 96%;
+    --muted: 240 4% 11%;
+    --muted-foreground: 222 8% 60%;
+    --accent: 215 36% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 215 42% 56%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: #0a0a0b;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: hsl(215 36% 48% / 0.85);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a2e;
+    border-radius: 6px;
+    border: 2px solid #0a0a0b;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(215 30% 40%);
+  }
+  .theme {
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+  }
+}
+
+@layer components {
+  .aom-display {
+    @apply font-display uppercase leading-[0.92] tracking-display;
+  }
+
+  .aom-eyebrow {
+    @apply font-mono text-xs uppercase tracking-widest text-aom-steel-glow;
+  }
+
+  .aom-hairline {
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--border)) 18%,
+      hsl(var(--border)) 82%,
+      transparent
+    );
+  }
+
+  .aom-glass {
+    background: linear-gradient(
+      160deg,
+      rgba(26, 26, 28, 0.9) 0%,
+      rgba(14, 14, 16, 0.78) 100%
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .aom-grid-texture {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
+
+@layer utilities {
+  .aom-text-shadow {
+    text-shadow:
+      0 2px 22px rgba(0, 0, 0, 0.78),
+      0 2px 44px rgba(76, 107, 150, 0.22);
+  }
+  .aom-mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

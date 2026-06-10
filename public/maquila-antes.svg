@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="steelA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#46505f"/>
+      <stop offset="0.5" stop-color="#272b33"/>
+      <stop offset="1" stop-color="#3a4150"/>
+    </linearGradient>
+    <linearGradient id="topA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5b6b82"/>
+      <stop offset="0.5" stop-color="#7c8da6"/>
+      <stop offset="1" stop-color="#4c5a70"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#0C0C0E"/>
+  <g stroke="#ffffff" stroke-opacity="0.04">
+    <path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M0 600H1200M0 700H1200"/>
+    <path d="M100 0V800M300 0V800M500 0V800M700 0V800M900 0V800M1100 0V800"/>
+  </g>
+  <!-- wavy steel ribbon (coil-set deformation) -->
+  <path d="M120 430 C 270 330 350 530 510 440 C 670 350 760 540 900 445 C 1000 380 1060 470 1090 440
+           L 1090 560 C 1060 590 1000 500 900 565 C 760 660 670 470 510 560 C 350 650 270 450 120 550 Z"
+        fill="url(#steelA)" stroke="#1b1d22" stroke-width="2"/>
+  <path d="M120 430 C 270 330 350 530 510 440 C 670 350 760 540 900 445 C 1000 380 1060 470 1090 440"
+        fill="none" stroke="url(#topA)" stroke-width="5"/>
+  <!-- deviation markers -->
+  <g stroke="#C0492F" stroke-width="2.5" fill="none">
+    <path d="M350 300 V 525" stroke-dasharray="6 7"/>
+    <path d="M340 300 H 360 M340 525 H 360"/>
+  </g>
+  <text x="372" y="408" fill="#D9694F" font-family="'Montserrat',sans-serif" font-size="26" font-weight="600">&#916; deformaci&#243;n</text>
+  <text x="372" y="438" fill="#8a8d96" font-family="'JetBrains Mono',monospace" font-size="19">coil-set / alabeo</text>
+  <!-- label -->
+  <text x="100" y="715" fill="#C0492F" font-family="'JetBrains Mono',monospace" font-size="22" letter-spacing="3">01</text>
+  <text x="148" y="715" fill="#F4F5F7" font-family="'Bebas Neue','Montserrat',sans-serif" font-size="46" letter-spacing="1">L&#193;MINA SIN NIVELAR</text>
+</svg>
