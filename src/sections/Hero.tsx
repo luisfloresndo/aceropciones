@@ -7,6 +7,7 @@ import { ArrowUpRight, ArrowDown } from 'lucide-react'
 import { FloatingPaths } from '@/components/ui/background-paths'
 import { CountUp } from '@/components/motion/CountUp'
 import { Magnetic } from '@/components/motion/Magnetic'
+import { MetalCursor } from '@/components/motion/MetalCursor'
 import { hechos } from '@/data/content'
 
 const headline = ['ACERO', 'CON', 'PRECISIÓN']
@@ -50,6 +51,9 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-aom-black via-transparent to-aom-black/25" />
       <div className="aom-grid-texture absolute inset-0 opacity-20" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_38%_42%,rgba(76,107,150,0.14),transparent_72%)]" />
+
+      {/* momento signature — reflejo metálico que sigue al cursor */}
+      <MetalCursor />
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
