@@ -9,7 +9,7 @@ export function Sectores() {
 
   return (
     <section className="relative overflow-hidden border-y border-white/[0.07] bg-aom-graphite py-10">
-      <Atmosphere variant="sides" />
+      <Atmosphere tone="steel-neutral" position="sides" />
       <div className="relative mx-auto mb-6 max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         <p className="aom-eyebrow text-center">
           Industrias que abastecemos en el norte de México

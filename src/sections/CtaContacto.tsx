@@ -43,7 +43,9 @@ export function CtaContacto() {
       id="contacto"
       className="relative overflow-hidden border-t border-white/[0.07] bg-aom-black py-24 lg:py-36"
     >
-      {/* fondo cinematográfico: Monterrey nocturno con parallax */}
+      {/* fondo cinematográfico: Monterrey nocturno con parallax
+          Aumentamos opacidad + reducimos overlay para que se vea la ciudad
+          y las luces cálidas — es un momento protagonista de la sección. */}
       <motion.div style={{ scale: bgScale, y: bgY }} className="absolute inset-0">
         <Image
           src="/monterrey-nocturno.jpg"
@@ -51,11 +53,14 @@ export function CtaContacto() {
           fill
           priority={false}
           sizes="100vw"
-          className="object-cover opacity-45"
+          className="object-cover opacity-80"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-aom-black via-aom-black/55 to-aom-black" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_45%_at_50%_40%,rgba(76,107,150,0.16),transparent_75%)]" />
+      {/* overlay ligero solo abajo para el bloque de datos/form */}
+      <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-aom-black via-aom-black/70 to-transparent" />
+      {/* overlay muy ligero arriba para el título */}
+      <div className="absolute inset-x-0 top-0 h-[35%] bg-gradient-to-b from-aom-black/60 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_45%_at_50%_45%,rgba(216,180,120,0.10),transparent_75%)]" />
 
       <div className="relative mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         {/* eyebrow + título monumental palabra-por-palabra */}

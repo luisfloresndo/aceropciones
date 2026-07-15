@@ -13,7 +13,7 @@ import { Atmosphere } from '@/components/motion/Atmosphere'
 export function AntesDespues() {
   return (
     <section className="relative overflow-hidden border-t border-white/[0.07] bg-aom-graphite py-24 lg:py-32">
-      <Atmosphere variant="top-left" />
+      <Atmosphere tone="steel-neutral" position="top-left" />
       <div className="relative mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         <SectionHeading
           index="05"

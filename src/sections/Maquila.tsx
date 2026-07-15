@@ -23,7 +23,7 @@ export function Maquila() {
       id="maquila"
       className="relative overflow-hidden bg-aom-black py-24 lg:py-32"
     >
-      <Atmosphere variant="bottom-right" />
+      <Atmosphere tone="warm-amber" position="bottom-right" />
       <div className="relative mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         <SectionHeading
           index="04"

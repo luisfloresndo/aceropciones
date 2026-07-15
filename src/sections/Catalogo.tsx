@@ -18,7 +18,7 @@ export function Catalogo() {
       id="catalogo"
       className="relative overflow-hidden border-t border-white/[0.07] bg-aom-graphite py-24 lg:py-32"
     >
-      <Atmosphere variant="top-left" texture textureOpacity={0.06} />
+      <Atmosphere tone="blueprint-cool" position="top-left" texture textureOpacity={0.06} />
       <div className="aom-grid-texture absolute inset-0 opacity-40" />
 
       <div className="relative mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">

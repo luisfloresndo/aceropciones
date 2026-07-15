@@ -16,7 +16,7 @@ const capacidades = [
 export function Rebrand() {
   return (
     <section id="rebrand" className="relative overflow-hidden bg-aom-black">
-      <Atmosphere variant="top-right" />
+      <Atmosphere tone="warm-amber" position="top-right" />
       <ContainerScroll
         titleComponent={
           <div className="mx-auto max-w-3xl px-6">

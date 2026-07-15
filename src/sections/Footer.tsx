@@ -34,25 +34,27 @@ export function Footer() {
       ref={ref}
       className="relative isolate overflow-hidden bg-aom-black"
     >
-      {/* fondo nocturno con parallax */}
+      {/* fondo nocturno con parallax — MUY visible, es la escena */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-10">
         <Image
           src="/footer-nocturno.jpg"
           alt=""
           fill
           sizes="100vw"
-          className="object-cover opacity-40"
+          className="object-cover opacity-75"
         />
       </motion.div>
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-aom-black/95 via-aom-black/75 to-aom-black" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(76,107,150,0.16),transparent_70%)]" />
+      {/* overlays ligeros que no ocultan las ventanas iluminadas */}
+      <div className="absolute inset-x-0 top-0 h-[45%] -z-10 bg-gradient-to-b from-aom-black via-aom-black/65 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-[45%] -z-10 bg-gradient-to-t from-aom-black via-aom-black/60 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(216,180,120,0.14),transparent_70%)]" />
 
-      {/* monograma gigante como firma visual */}
+      {/* monograma pequeño en esquina como firma sutil (ya no gigante que tapaba) */}
       <motion.div
         style={{ y: monogramY, opacity: monogramOpacity }}
-        className="pointer-events-none absolute inset-x-0 bottom-[-8%] flex justify-center"
+        className="pointer-events-none absolute -right-8 -bottom-4 flex justify-end sm:right-4"
       >
-        <AomMonogram className="h-[42vw] max-h-[560px] w-auto" />
+        <AomMonogram className="h-[26vw] max-h-[320px] w-auto" />
       </motion.div>
 
       <div className="relative mx-auto max-w-[1440px] px-6 pt-24 sm:px-8 lg:px-12 xl:px-16 lg:pt-32">
@@ -102,62 +104,73 @@ export function Footer() {
           </a>
         </div>
 
-        {/* columnas de datos con hover subrayado */}
-        <div className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <span className="aom-eyebrow">Navegación</span>
-            <ul className="mt-5 flex flex-col gap-3">
+        {/* columnas de datos como cards con backdrop-blur — flotan sobre la nave iluminada */}
+        <div className="grid gap-4 py-16 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-aom-black/55 p-7 backdrop-blur-md transition-colors duration-500 hover:border-aom-steel-glow/35 hover:bg-aom-black/70">
+            <span className="pointer-events-none absolute -right-2 -top-4 select-none font-display text-[6rem] leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-aom-steel-glow/30">
+              01
+            </span>
+            <span className="relative aom-eyebrow">Navegación</span>
+            <ul className="relative mt-5 flex flex-col gap-2.5">
               {nav.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="group relative inline-block text-sm text-aom-mist transition-colors hover:text-aom-white"
+                    className="group/link relative inline-block text-sm text-aom-mist transition-colors hover:text-aom-white"
                   >
                     {item.label}
-                    <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-aom-steel-glow transition-transform duration-300 group-hover:scale-x-100" />
+                    <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-aom-steel-glow transition-transform duration-300 group-hover/link:scale-x-100" />
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div>
-            <span className="aom-eyebrow">Contacto</span>
-            <ul className="mt-5 flex flex-col gap-3 text-sm text-aom-mist">
+          <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-aom-black/55 p-7 backdrop-blur-md transition-colors duration-500 hover:border-aom-steel-glow/35 hover:bg-aom-black/70">
+            <span className="pointer-events-none absolute -right-2 -top-4 select-none font-display text-[6rem] leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-aom-steel-glow/30">
+              02
+            </span>
+            <span className="relative aom-eyebrow">Contacto</span>
+            <ul className="relative mt-5 flex flex-col gap-2.5 text-sm text-aom-mist">
               <li>
                 <a
                   href={contacto.telefonoHref}
-                  className="group relative inline-block transition-colors hover:text-aom-white"
+                  className="group/link relative inline-block font-display text-2xl tracking-display text-aom-white transition-colors hover:text-aom-steel-glow"
                 >
                   {contacto.telefono}
-                  <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-aom-steel-glow transition-transform duration-300 group-hover:scale-x-100" />
                 </a>
               </li>
-              <li className="text-aom-smoke">{contacto.conmutador}</li>
+              <li className="text-xs text-aom-smoke">{contacto.conmutador}</li>
             </ul>
           </div>
 
-          <div>
-            <span className="aom-eyebrow">Atención</span>
-            <ul className="mt-5 flex flex-col gap-3 text-sm">
+          <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-aom-black/55 p-7 backdrop-blur-md transition-colors duration-500 hover:border-aom-steel-glow/35 hover:bg-aom-black/70">
+            <span className="pointer-events-none absolute -right-2 -top-4 select-none font-display text-[6rem] leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-aom-steel-glow/30">
+              03
+            </span>
+            <span className="relative aom-eyebrow">Atención personalizada</span>
+            <ul className="relative mt-5 flex flex-col gap-3 text-sm">
               {contacto.ejecutivos.map((ej) => (
                 <li key={ej.correo} className="flex flex-col">
                   <span className="text-aom-white">{ej.nombre}</span>
                   <a
                     href={`mailto:${ej.correo}`}
-                    className="group relative inline-block self-start text-xs text-aom-smoke transition-colors hover:text-aom-steel-glow"
+                    className="group/link relative inline-block self-start text-xs text-aom-smoke transition-colors hover:text-aom-steel-glow"
                   >
                     {ej.correo}
-                    <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-aom-steel-glow transition-transform duration-300 group-hover:scale-x-100" />
+                    <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-aom-steel-glow transition-transform duration-300 group-hover/link:scale-x-100" />
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div>
-            <span className="aom-eyebrow">Planta</span>
-            <p className="mt-5 text-sm leading-relaxed text-aom-mist">
+          <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-aom-black/55 p-7 backdrop-blur-md transition-colors duration-500 hover:border-aom-steel-glow/35 hover:bg-aom-black/70">
+            <span className="pointer-events-none absolute -right-2 -top-4 select-none font-display text-[6rem] leading-none text-white/[0.06] transition-colors duration-500 group-hover:text-aom-steel-glow/30">
+              04
+            </span>
+            <span className="relative aom-eyebrow">Planta</span>
+            <p className="relative mt-5 text-sm leading-relaxed text-aom-mist">
               {contacto.direccion}
             </p>
           </div>
