@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { AomLogoFull } from '@/components/brand/AomLogo'
+import { AomMonogram } from '@/components/brand/AomLogo'
 import { Magnetic } from '@/components/motion/Magnetic'
 import { nav, contacto } from '@/data/content'
 
@@ -36,10 +36,10 @@ export function Navbar() {
           aria-label="Aceropciones y Maquilas — inicio"
           className="shrink-0"
         >
-          <AomLogoFull
+          <AomMonogram
             className={cn(
               'transition-all duration-300',
-              scrolled ? 'h-10' : 'h-12',
+              scrolled ? 'h-11' : 'h-14',
             )}
           />
         </a>
