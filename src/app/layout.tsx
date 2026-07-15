@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Bebas_Neue, Montserrat, JetBrains_Mono } from 'next/font/google'
+import { StructuredData } from '@/components/seo/StructuredData'
 import './globals.css'
 
 const display = Bebas_Neue({
@@ -23,11 +24,12 @@ const mono = JetBrains_Mono({
   display: 'swap',
 })
 
-// En Vercel: VERCEL_PROJECT_PRODUCTION_URL = dominio de producción (sin protocolo).
-// En local / fallback: usa el dominio final cuando esté listo.
+// En Vercel: VERCEL_PROJECT_PRODUCTION_URL = dominio de producción (sin
+// protocolo). Cuando se conecte el dominio custom aceropciones.com.mx
+// a Vercel, esta variable pasa automáticamente a apuntar ahí.
 const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : 'https://www.aceropciones.com.mx'
+  : 'https://aceropciones.com.mx'
 const DESCRIPTION =
   'Aceropciones y Maquilas (AOM) — soluciones integrales de acero y maquila industrial de precisión en el norte de México. Acero con precisión, soluciones a la medida.'
 
@@ -75,6 +77,10 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
   robots: { index: true, follow: true },
+  alternates: { canonical: '/' },
+  // TODO: cuando registres el sitio en Google Search Console, agrega
+  // el código de verificación aquí (Search Console te da un string):
+  // verification: { google: 'TU-CODIGO-AQUI' },
 }
 
 export const viewport: Viewport = {
@@ -94,6 +100,7 @@ export default function RootLayout({
       className={`dark ${display.variable} ${sans.variable} ${mono.variable}`}
     >
       <body className="bg-aom-black font-sans text-aom-white antialiased">
+        <StructuredData />
         {children}
       </body>
     </html>

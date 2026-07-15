@@ -14,6 +14,7 @@ import {
 import { Navbar } from '@/sections/Navbar'
 import { Footer } from '@/sections/Footer'
 import { SteelProfileIcon } from '@/components/brand/SteelProfileIcon'
+import { ProductStructuredData } from '@/components/seo/ProductStructuredData'
 import { catalogo, getProducto, fotoProducto, contacto } from '@/data/content'
 
 type Params = { params: Promise<{ slug: string }> }
@@ -39,6 +40,9 @@ export default async function ProductoPage({ params }: Params) {
   if (!producto) notFound()
   const foto = fotoProducto(producto.slug)
 
+  // JSON-LD Product schema — se inyecta al inicio del árbol
+  const structuredData = <ProductStructuredData producto={producto} />
+
   const specs = [
     { icon: Layers, label: 'Grados de acero', items: producto.grados },
     { icon: Ruler, label: 'Tramos', items: producto.tramos },
@@ -49,6 +53,7 @@ export default async function ProductoPage({ params }: Params) {
 
   return (
     <div className="min-h-screen bg-aom-black text-aom-white">
+      {structuredData}
       <Navbar />
 
       <main className="mx-auto max-w-[1440px] px-6 pt-32 pb-24 sm:px-8 lg:px-12 xl:px-16 lg:pt-40">
