@@ -47,10 +47,10 @@ export default function Page() {
         <Propuesta />
         <Catalogo />
         <PhotoDivider
-          src="/hero-acero.jpg"
-          alt="Nave industrial de acero"
-          caption="Suministro y transformación · Norte de México"
-          height="65vh"
+          src="/divisor-estructura.jpg"
+          alt="Estructura de acero al atardecer"
+          caption="El acero AOM · puesto en obra"
+          height="70vh"
         />
         <StatementScrolly />
         <Maquila />
