@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import Image from 'next/image'
 import {
   motion,
   useScroll,
@@ -44,7 +45,19 @@ export function ProcesoPineado() {
       style={{ height: `${total * 100}vh` }}
     >
       <div className="sticky top-0 flex h-[100svh] overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_50%,rgba(76,107,150,0.12),transparent_70%)]" />
+        {/* textura de acero pulido muy sutil */}
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/valores-textura.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-[0.06] mix-blend-luminosity"
+          />
+        </div>
+        {/* dos glows opuestos para atmósfera */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_55%_at_15%_35%,rgba(76,107,150,0.18),transparent_65%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_55%_at_85%_65%,rgba(76,107,150,0.14),transparent_65%)]" />
         <div className="aom-grid-texture absolute inset-0 opacity-25" />
 
         <div className="relative mx-auto flex w-full max-w-[1400px] flex-col px-6 lg:flex-row lg:items-center lg:gap-24 lg:px-16">

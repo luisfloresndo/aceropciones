@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { Atmosphere } from '@/components/motion/Atmosphere'
 import {
   Layers3,
   Scissors,
@@ -20,9 +21,10 @@ export function Maquila() {
   return (
     <section
       id="maquila"
-      className="relative bg-aom-black py-24 lg:py-32"
+      className="relative overflow-hidden bg-aom-black py-24 lg:py-32"
     >
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
+      <Atmosphere variant="bottom-right" />
+      <div className="relative mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         <SectionHeading
           index="04"
           eyebrow="Maquila industrial"

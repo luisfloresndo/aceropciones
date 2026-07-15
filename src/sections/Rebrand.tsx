@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { ContainerScroll } from '@/components/ui/container-scroll-animation'
 import { AomMonogram } from '@/components/brand/AomLogo'
 import { brand, mision } from '@/data/content'
+import { Atmosphere } from '@/components/motion/Atmosphere'
 
 const capacidades = [
   'Suministro de acero',
@@ -14,7 +15,8 @@ const capacidades = [
 
 export function Rebrand() {
   return (
-    <section id="rebrand" className="relative bg-aom-black">
+    <section id="rebrand" className="relative overflow-hidden bg-aom-black">
+      <Atmosphere variant="top-right" />
       <ContainerScroll
         titleComponent={
           <div className="mx-auto max-w-3xl px-6">

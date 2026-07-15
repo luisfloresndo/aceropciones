@@ -7,6 +7,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { SectionHeading } from '@/components/brand/SectionHeading'
 import { SteelProfileIcon } from '@/components/brand/SteelProfileIcon'
 import { Tilt } from '@/components/motion/Tilt'
+import { Atmosphere } from '@/components/motion/Atmosphere'
 import { catalogo, fotoProducto } from '@/data/content'
 
 const MotionLink = motion.create(Link)
@@ -15,8 +16,9 @@ export function Catalogo() {
   return (
     <section
       id="catalogo"
-      className="relative border-t border-white/[0.07] bg-aom-graphite py-24 lg:py-32"
+      className="relative overflow-hidden border-t border-white/[0.07] bg-aom-graphite py-24 lg:py-32"
     >
+      <Atmosphere variant="top-left" texture textureOpacity={0.06} />
       <div className="aom-grid-texture absolute inset-0 opacity-40" />
 
       <div className="relative mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">

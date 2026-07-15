@@ -1,6 +1,7 @@
 import { ScrollProgress } from '@/components/motion/ScrollProgress'
 import { CursorGlow } from '@/components/motion/CursorGlow'
 import { SmoothScroll } from '@/components/motion/SmoothScroll'
+import { FilmGrain } from '@/components/motion/FilmGrain'
 import { Marquee } from '@/components/motion/Marquee'
 import { Navbar } from '@/sections/Navbar'
 import { Hero } from '@/sections/Hero'
@@ -36,6 +37,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-aom-black text-aom-white">
       <SmoothScroll />
+      <FilmGrain />
       <ScrollProgress />
       <CursorGlow />
       <Navbar />

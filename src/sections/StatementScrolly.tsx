@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 /**
@@ -28,7 +29,17 @@ export function StatementScrolly() {
       className="relative h-[280vh] bg-aom-black"
     >
       <div className="sticky top-0 flex h-[100svh] items-center overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_45%,rgba(76,107,150,0.15),transparent_72%)]" />
+        {/* textura de acero pulido muy sutil como fondo */}
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/valores-textura.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-[0.08] mix-blend-luminosity"
+          />
+        </div>
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_45%,rgba(76,107,150,0.18),transparent_72%)]" />
         <div className="aom-grid-texture absolute inset-0 opacity-25" />
 
         <div className="relative mx-auto max-w-[1400px] px-6 lg:px-16">
