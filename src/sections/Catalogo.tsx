@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { SectionHeading } from '@/components/brand/SectionHeading'
 import { SteelProfileIcon } from '@/components/brand/SteelProfileIcon'
+import { Tilt } from '@/components/motion/Tilt'
 import { catalogo, fotoProducto } from '@/data/content'
 
 const MotionLink = motion.create(Link)
@@ -37,15 +38,15 @@ export function Catalogo() {
           {catalogo.map((p, i) => {
             const foto = fotoProducto(p.slug)
             return (
-              <MotionLink
-                key={p.slug}
-                href={`/productos/${p.slug}`}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.45, delay: (i % 4) * 0.06 }}
-                className="group flex flex-col bg-aom-graphite transition-colors duration-300 hover:bg-aom-surface"
-              >
+              <Tilt key={p.slug} className="group/tilt block h-full">
+                <MotionLink
+                  href={`/productos/${p.slug}`}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.45, delay: (i % 4) * 0.06 }}
+                  className="group flex h-full flex-col bg-aom-graphite transition-colors duration-300 hover:bg-aom-surface"
+                >
                 {/* visual */}
                 <div className="relative aspect-[3/2] overflow-hidden">
                   {foto ? (
@@ -91,7 +92,8 @@ export function Catalogo() {
                     <ArrowUpRight className="size-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </div>
-              </MotionLink>
+                </MotionLink>
+              </Tilt>
             )
           })}
 
