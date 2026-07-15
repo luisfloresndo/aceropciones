@@ -51,7 +51,7 @@ export default async function ProductoPage({ params }: Params) {
     <div className="min-h-screen bg-aom-black text-aom-white">
       <Navbar />
 
-      <main className="mx-auto max-w-[1280px] px-6 pt-32 pb-24 lg:px-10 lg:pt-40">
+      <main className="mx-auto max-w-[1440px] px-6 pt-32 pb-24 sm:px-8 lg:px-12 xl:px-16 lg:pt-40">
         {/* breadcrumb */}
         <nav className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-aom-smoke">
           <Link href="/" className="transition-colors hover:text-aom-white">

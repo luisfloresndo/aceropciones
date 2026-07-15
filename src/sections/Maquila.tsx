@@ -22,7 +22,7 @@ export function Maquila() {
       id="maquila"
       className="relative bg-aom-black py-24 lg:py-32"
     >
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         <SectionHeading
           index="04"
           eyebrow="Maquila industrial"

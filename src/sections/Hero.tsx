@@ -57,7 +57,7 @@ export function Hero() {
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-1 flex-col justify-center px-6 pt-32 pb-10 lg:px-10 [&_p]:[text-shadow:0_2px_16px_rgba(0,0,0,0.88)]"
+        className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-6 pt-32 pb-10 sm:px-8 lg:px-12 xl:px-16 [&_p]:[text-shadow:0_2px_16px_rgba(0,0,0,0.88)]"
       >
         {/* eyebrow */}
         <motion.div
@@ -148,7 +148,7 @@ export function Hero() {
         transition={{ delay: 1.2, duration: 0.8 }}
         className="relative z-10 border-t border-white/[0.07] bg-aom-black/40 backdrop-blur-sm"
       >
-        <div className="mx-auto grid max-w-[1280px] grid-cols-2 divide-x divide-white/[0.07] px-6 lg:grid-cols-4 lg:px-10">
+        <div className="mx-auto grid max-w-[1440px] grid-cols-2 divide-x divide-white/[0.07] px-6 sm:px-8 lg:px-12 xl:px-16 lg:grid-cols-4">
           {hechos.map((h) => (
             <div key={h.detalle} className="px-4 py-6 first:pl-0">
               <div className="flex items-baseline gap-1.5">

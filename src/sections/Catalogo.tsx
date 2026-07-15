@@ -18,7 +18,7 @@ export function Catalogo() {
     >
       <div className="aom-grid-texture absolute inset-0 opacity-40" />
 
-      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
             index="03"

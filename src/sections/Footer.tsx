@@ -12,7 +12,7 @@ export function Footer() {
         <AomMonogram className="h-56 opacity-[0.035]" />
       </div>
 
-      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         {/* statement */}
         <div className="flex flex-col gap-8 border-b border-white/[0.07] py-16 lg:flex-row lg:items-end lg:justify-between">
           <div>

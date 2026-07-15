@@ -8,7 +8,7 @@ export function Sectores() {
 
   return (
     <section className="relative border-y border-white/[0.07] bg-aom-graphite py-10">
-      <div className="mx-auto mb-6 max-w-[1280px] px-6 lg:px-10">
+      <div className="mx-auto mb-6 max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         <p className="aom-eyebrow text-center">
           Industrias que abastecemos en el norte de México
         </p>

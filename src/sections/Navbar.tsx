@@ -26,7 +26,7 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          'mx-auto flex h-[72px] max-w-[1280px] items-center justify-between px-6 transition-all duration-300 lg:px-10',
+          'mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-6 transition-all duration-300 sm:px-8 lg:px-12 xl:px-16',
           scrolled &&
             'mt-2 h-16 max-w-[1180px] rounded-xl border border-white/[0.07] bg-aom-graphite/80 px-4 backdrop-blur-xl lg:px-6',
         )}

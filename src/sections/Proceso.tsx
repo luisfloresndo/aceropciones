@@ -17,7 +17,7 @@ export function Proceso() {
       <div className="aom-grid-texture absolute inset-0 opacity-30" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_42%,rgba(76,107,150,0.12),transparent_72%)]" />
 
-      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16">
         <SectionHeading
           index="06"
           eyebrow="Cómo trabajamos contigo"
