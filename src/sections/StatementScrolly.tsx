@@ -26,6 +26,7 @@ export function StatementScrolly() {
   return (
     <section
       ref={ref}
+      id="manifiesto"
       className="relative h-[280vh] bg-aom-black"
     >
       <div className="sticky top-0 flex h-[100svh] items-center overflow-hidden">

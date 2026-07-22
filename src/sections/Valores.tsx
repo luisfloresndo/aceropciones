@@ -19,6 +19,7 @@ export function Valores() {
   return (
     <section
       ref={ref}
+      id="valores"
       className="relative overflow-hidden border-t border-white/[0.07] bg-aom-black py-24 lg:py-32"
     >
       {/* fondo: textura metálica con zoom parallax */}

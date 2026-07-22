@@ -32,6 +32,7 @@ export function Footer() {
   return (
     <footer
       ref={ref}
+      id="footer"
       className="relative isolate overflow-hidden bg-aom-black"
     >
       {/* fondo nocturno con parallax — MUY visible, es la escena */}

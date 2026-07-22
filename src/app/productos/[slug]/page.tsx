@@ -15,6 +15,7 @@ import { Navbar } from '@/sections/Navbar'
 import { Footer } from '@/sections/Footer'
 import { SteelProfileIcon } from '@/components/brand/SteelProfileIcon'
 import { ProductStructuredData } from '@/components/seo/ProductStructuredData'
+import { WhatsAppBubble } from '@/components/motion/WhatsAppBubble'
 import { catalogo, getProducto, fotoProducto, contacto } from '@/data/content'
 
 type Params = { params: Promise<{ slug: string }> }
@@ -54,6 +55,7 @@ export default async function ProductoPage({ params }: Params) {
   return (
     <div className="min-h-screen bg-aom-black text-aom-white">
       {structuredData}
+      <WhatsAppBubble />
       <Navbar />
 
       <main className="mx-auto max-w-[1440px] px-6 pt-32 pb-24 sm:px-8 lg:px-12 xl:px-16 lg:pt-40">

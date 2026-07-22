@@ -10,7 +10,7 @@ import { arquetipos, propuestaValor } from '@/data/content'
  */
 export function Propuesta() {
   return (
-    <section className="relative bg-[#F5F4EE] py-24 text-aom-black lg:py-32">
+    <section id="propuesta" className="relative bg-[#F5F4EE] py-24 text-aom-black lg:py-32">
       {/* trama sutil sobre paper */}
       <div
         aria-hidden

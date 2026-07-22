@@ -2,6 +2,8 @@ import { ScrollProgress } from '@/components/motion/ScrollProgress'
 import { CursorGlow } from '@/components/motion/CursorGlow'
 import { SmoothScroll } from '@/components/motion/SmoothScroll'
 import { FilmGrain } from '@/components/motion/FilmGrain'
+import { ProgressRail } from '@/components/motion/ProgressRail'
+import { WhatsAppBubble } from '@/components/motion/WhatsAppBubble'
 import { Marquee } from '@/components/motion/Marquee'
 import { Navbar } from '@/sections/Navbar'
 import { Hero } from '@/sections/Hero'
@@ -40,6 +42,8 @@ export default function Page() {
       <FilmGrain />
       <ScrollProgress />
       <CursorGlow />
+      <ProgressRail />
+      <WhatsAppBubble />
       <Navbar />
       <main>
         <Hero />
