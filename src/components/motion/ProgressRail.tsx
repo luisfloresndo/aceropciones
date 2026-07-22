@@ -1,20 +1,22 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   motion,
   useScroll,
   useSpring,
   useTransform,
+  useMotionValueEvent,
 } from 'framer-motion'
 
 /**
  * Riel de progreso lateral derecho — línea vertical minimalista.
- * En lugar de dots (demasiado presentes), una línea que se llena
- * con el scroll y un indicador que muestra la sección actual junto
- * a un pequeño acento. Más elegante y menos ruidoso.
+ * El label ("07 / 12 · Manifiesto") solo se muestra mientras el
+ * usuario está scrolleando activamente y desaparece tras ~800ms
+ * de inactividad. Cuando está quieto leyendo, solo queda la línea.
  *
- * Referencia: Titan Geek. Del ATLAS §8 (progress rail).
+ * Patrón "HUD de auto": info cuando la necesitas, invisible cuando lees.
+ * Ref: Titan Geek + ATLAS §8.
  */
 const sections = [
   { id: 'top', label: 'Hero' },
@@ -31,8 +33,13 @@ const sections = [
   { id: 'footer', label: 'Cierre' },
 ]
 
+const HIDE_AFTER_MS = 800
+
 export function ProgressRail() {
   const [activeIdx, setActiveIdx] = useState(0)
+  const [isScrolling, setIsScrolling] = useState(false)
+  const timeoutRef = useRef<number | null>(null)
+
   const { scrollYProgress } = useScroll()
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -42,6 +49,21 @@ export function ProgressRail() {
 
   const fillHeight = useTransform(smoothProgress, [0, 1], ['0%', '100%'])
   const markerTop = useTransform(smoothProgress, [0, 1], ['0%', '100%'])
+
+  // Detecta actividad de scroll — muestra el label y programa el fade out
+  useMotionValueEvent(scrollYProgress, 'change', () => {
+    setIsScrolling(true)
+    if (timeoutRef.current) window.clearTimeout(timeoutRef.current)
+    timeoutRef.current = window.setTimeout(() => {
+      setIsScrolling(false)
+    }, HIDE_AFTER_MS)
+  })
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) window.clearTimeout(timeoutRef.current)
+    }
+  }, [])
 
   useEffect(() => {
     const observers: IntersectionObserver[] = []
@@ -69,17 +91,20 @@ export function ProgressRail() {
       aria-hidden
       className="pointer-events-none fixed right-8 top-1/2 z-40 hidden h-[60vh] -translate-y-1/2 lg:block"
     >
-      {/* track — línea vertical thin */}
       <div className="relative h-full w-px bg-white/10">
-        {/* fill — se llena con el scroll */}
         <motion.div
           style={{ height: fillHeight }}
           className="absolute inset-x-0 top-0 origin-top bg-gradient-to-b from-aom-steel-glow/40 via-aom-steel-glow to-aom-steel-glow"
         />
 
-        {/* indicador que se mueve con el scroll — tick + texto de sección */}
+        {/* label — fade in/out según actividad de scroll */}
         <motion.div
           style={{ top: markerTop }}
+          animate={{
+            opacity: isScrolling ? 1 : 0,
+            x: isScrolling ? 0 : 8,
+          }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="absolute right-0 flex -translate-y-1/2 items-center gap-3 whitespace-nowrap pr-2"
         >
           <span className="font-mono text-[0.62rem] uppercase leading-none tracking-[0.28em] text-aom-steel-glow">
