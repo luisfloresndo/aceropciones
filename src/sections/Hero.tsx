@@ -97,25 +97,39 @@ export function Hero() {
             ))}
           </span>
           <span className="block">
-            {headlineLine2.map((word, wi) => (
-              <span key={word} className="mr-[0.22em] inline-block last:mr-0">
-                {word.split('').map((ch, ci) => (
-                  <motion.span
-                    key={`l2-${wi}-${ci}`}
-                    initial={{ y: 80, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{
-                      delay: 0.55 + wi * 0.1 + ci * 0.025,
-                      duration: 0.8,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className={`inline-block ${wi === 1 ? 'italic text-aom-steel-glow' : ''}`}
-                  >
-                    {ch}
-                  </motion.span>
-                ))}
-              </span>
-            ))}
+            {headlineLine2.map((word, wi) => {
+              const isAcero = wi === 1
+              return (
+                <span key={word} className="mr-[0.22em] inline-block last:mr-0">
+                  {word.split('').map((ch, ci) => (
+                    <motion.span
+                      key={`l2-${wi}-${ci}`}
+                      initial={{ y: 80, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{
+                        delay: 0.55 + wi * 0.1 + ci * 0.025,
+                        duration: 0.8,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                      className={`inline-block ${
+                        isAcero ? 'italic' : ''
+                      }`}
+                      style={
+                        isAcero
+                          ? {
+                              color: '#B8D3F5',
+                              textShadow:
+                                '0 0 42px rgba(133,178,232,0.55), 0 0 22px rgba(76,107,150,0.75), 0 2px 12px rgba(0,0,0,0.65)',
+                            }
+                          : undefined
+                      }
+                    >
+                      {ch}
+                    </motion.span>
+                  ))}
+                </span>
+              )
+            })}
           </span>
         </h1>
 
