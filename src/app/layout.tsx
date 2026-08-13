@@ -31,12 +31,12 @@ const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : 'https://aceropciones.com.mx'
 const DESCRIPTION =
-  'Aceropciones y Maquilas (AOM) — soluciones integrales de acero y maquila industrial de precisión en el norte de México. Acero con precisión, soluciones a la medida.'
+  'Aceropciones y Maquilas (AOM) — soluciones integrales de acero y maquila industrial de precisión en el norte de México. Tu mejor opción en acero.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Aceropciones y Maquilas — Acero con precisión',
+    default: 'Aceropciones y Maquilas — Tu mejor opción en acero',
     template: '%s — Aceropciones y Maquilas',
   },
   description: DESCRIPTION,
@@ -59,20 +59,20 @@ export const metadata: Metadata = {
     locale: 'es_MX',
     url: SITE_URL,
     siteName: 'Aceropciones y Maquilas',
-    title: 'Aceropciones y Maquilas — Acero con precisión',
+    title: 'Aceropciones y Maquilas — Tu mejor opción en acero',
     description: DESCRIPTION,
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Aceropciones y Maquilas — Acero con precisión, soluciones a la medida.',
+        alt: 'Aceropciones y Maquilas — Tu mejor opción en acero, soluciones a la medida.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aceropciones y Maquilas — Acero con precisión',
+    title: 'Aceropciones y Maquilas — Tu mejor opción en acero',
     description: DESCRIPTION,
     images: ['/og-image.jpg'],
   },

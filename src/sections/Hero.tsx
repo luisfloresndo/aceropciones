@@ -10,7 +10,8 @@ import { Magnetic } from '@/components/motion/Magnetic'
 import { MetalCursor } from '@/components/motion/MetalCursor'
 import { hechos } from '@/data/content'
 
-const headline = ['ACERO', 'CON', 'PRECISIÓN']
+const headlineLine1 = ['TU', 'MEJOR', 'OPCIÓN']
+const headlineLine2 = ['EN', 'ACERO']
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null)
@@ -72,27 +73,50 @@ export function Hero() {
           </span>
         </motion.div>
 
-        {/* headline */}
-        <h1 className="aom-display aom-text-shadow text-[clamp(3.5rem,12vw,11rem)] text-aom-white">
-          {headline.map((word, wi) => (
-            <span key={word} className="mr-[0.22em] inline-block last:mr-0">
-              {word.split('').map((ch, ci) => (
-                <motion.span
-                  key={`${wi}-${ci}`}
-                  initial={{ y: 80, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    delay: 0.2 + wi * 0.12 + ci * 0.03,
-                    duration: 0.8,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="inline-block"
-                >
-                  {ch}
-                </motion.span>
-              ))}
-            </span>
-          ))}
+        {/* headline en dos líneas */}
+        <h1 className="aom-display aom-text-shadow text-[clamp(3.5rem,12vw,11rem)] leading-[0.92] text-aom-white">
+          <span className="block">
+            {headlineLine1.map((word, wi) => (
+              <span key={word} className="mr-[0.22em] inline-block last:mr-0">
+                {word.split('').map((ch, ci) => (
+                  <motion.span
+                    key={`l1-${wi}-${ci}`}
+                    initial={{ y: 80, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                      delay: 0.2 + wi * 0.1 + ci * 0.025,
+                      duration: 0.8,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="inline-block"
+                  >
+                    {ch}
+                  </motion.span>
+                ))}
+              </span>
+            ))}
+          </span>
+          <span className="block">
+            {headlineLine2.map((word, wi) => (
+              <span key={word} className="mr-[0.22em] inline-block last:mr-0">
+                {word.split('').map((ch, ci) => (
+                  <motion.span
+                    key={`l2-${wi}-${ci}`}
+                    initial={{ y: 80, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                      delay: 0.55 + wi * 0.1 + ci * 0.025,
+                      duration: 0.8,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className={`inline-block ${wi === 1 ? 'italic text-aom-steel-glow' : ''}`}
+                  >
+                    {ch}
+                  </motion.span>
+                ))}
+              </span>
+            ))}
+          </span>
         </h1>
 
         <motion.p

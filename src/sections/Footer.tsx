@@ -7,7 +7,7 @@ import { ArrowUp } from 'lucide-react'
 import { AomMonogram } from '@/components/brand/AomLogo'
 import { nav, contacto, brand } from '@/data/content'
 
-const manifiesto = 'Acero con precisión, soluciones a la medida.'.split(' ')
+const manifiesto = 'Tu mejor opción en acero.'.split(' ')
 
 const marqueeItems = [
   'AOM',
@@ -16,7 +16,7 @@ const marqueeItems = [
   '+20 años',
   'Trazabilidad',
   'Precisión',
-  'Acero con precisión',
+  'Tu mejor opción en acero',
 ]
 
 export function Footer() {

@@ -8,15 +8,15 @@ export const brand = {
   name: 'Aceropciones',
   fullName: 'Aceropciones y Maquilas',
   short: 'AOM',
-  lema: 'Acero con precisión, soluciones a la medida',
+  lema: 'Tu mejor opción en acero',
   promesa: 'El acero que mueve tu industria, siempre a tiempo.',
 }
 
 export const contacto = {
-  telefono: '(81) 8321-5210',
-  telefonoHref: 'tel:+528183215210',
-  whatsapp: 'https://wa.me/528183215210',
-  whatsappNumber: '528183215210',
+  telefono: '(81) 2202-5883',
+  telefonoHref: 'tel:+528122025883',
+  whatsapp: 'https://wa.me/528122025883',
+  whatsappNumber: '528122025883',
   conmutador: 'Conmutador con 6 líneas',
   direccion:
     'Puerto de Veracruz No. 225, Col. La Fe, San Nicolás de los Garza, N.L., C.P. 66477',
