@@ -69,7 +69,7 @@ export function Hero() {
         >
           <span className="h-px w-10 bg-aom-steel-glow" />
           <span className="aom-eyebrow">
-            Aceropciones y Maquilas — Identidad 2025
+            Aceropciones y Maquilas — Identidad 2026
           </span>
         </motion.div>
 
